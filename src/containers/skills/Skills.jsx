@@ -12,16 +12,16 @@ const Skills = () => {
  
   useEffect(() => {
      const skillsQuery = '*[_type == "skills"]';
-     const query = '*[_type =="experience" ]';
+     //const query = '*[_type =="experience" ]';
      
 
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
     });
-   client.fetch(query).then((data)=>{
+   /*client.fetch(query).then((data)=>{
       setExperiences(data);
       console.log(data);
-    })
+    })*/
     
   }, []);
 
@@ -48,21 +48,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-         <div className="app__skills-exp">
-          <div className="app__skills-exp-item">
-            {experiences.map((work)=>{
-              <><div className="app__skills-exp-year">
-                <h3>{work.year}</h3>
-              </div>
-              <div className="app__exp-details">
-                 <h4>{work.name}</h4>
-                 <h6>{work.company}</h6>
-                 <p>{work.desc}</p>
-              </div>
-              </>
-            })}
-          </div>
-         </div>
+         
              
            
         </div>
